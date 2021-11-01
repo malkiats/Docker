@@ -1,0 +1,32 @@
+Docker Installation
+
+Install yum-utils
+# yum install -y yum-utils
+
+Add docker repo
+# yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+Enable Docker repo  
+# yum-config-manager --enable docker-ce-nightly
+  
+Test repo
+# yum-config-manager --enable docker-ce-test
+
+Disable the repo
+# yum-config-manager --disable docker-ce-nightly
+
+Docker packages install
+# yum install -y docker-ce docker-ce-cli containerd.io
+
+Start docker service
+#  systemctl start docker; systemctl enable docker
+
+Run hello-world
+# docker run hello-world
+
+Docker Compose 
+# curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose;  chmod +x /usr/local/bin/docker-compose; ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose; docker-compose --version
+
+Then Run 
+
+# mv Dockerfile docker-compose.yml; docker-compose up -d; docker images
