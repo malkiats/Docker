@@ -1,0 +1,132 @@
+To build image
+# docker build -t jenkins-test1 .
+
+Create local directory to map jenkins data to local
+# mkdir /docker/jenkins/home_jenkins
+
+Run Docker
+# docker run -d  --name jekins-docker -p 8080:8080 -p 50000:50000 -v /docker/jenkins/home_jenkins:/var/jenkins_home  jenkins-test1
+# docker run -u 0 -d --name jenkinst1 -p 8080:8080 -p 50000:50000 -v /jenkins-data/jenkins_home:/var/jenkins_home jenkins/jenkins
+# docker run -d --name jenkins-svr -p 8080:8080 -p 50000:50000 -v /docker/jenkins:/var/jenkins_home  dockerfile
+
+The following example starts a Redis container and configures it to always restart unless it is explicitly stopped or Docker is restarted.
+$ docker run -d--restartunless-stopped redis
+ 
+This command changes the restart policy for an already running container named redis.
+$ docker update --restartunless-stopped redis
+
+And this command will ensure all currently running containers will be restarted unless stopped.
+$docker update --restartunless-stopped $(docker ps -q)
+
+run the image as a container?
+$ sudo docker run -i -t alpine /bin/bash
+
+To get the IP Address from the container
+[root@docker ~]# docker inspect -f  8c24ba549e91
+172.17.0.2
+
+Bridge
+# docker run ubuntu
+None
+# docker run ubuntu --network=none
+Host
+# docker run ubuntu --network=host
+
+Login as root in container
+# docker exec -u 0 -it jenkins bash
+
+Run - start a container
+# docker run nginx
+
+Delete all stop Container in one time
+# docker container prune
+
+ps - list containers
+# docker ps
+# docker ps -a
+
+STOP - stop a container
+# docker ps
+# docker stop silly_sammet
+
+Rm - remove a container
+# docker rm silly_sammet
+# docker ps -a
+
+Copy file inside Container
+# docker cp script.sh shub_jenkins_1:/tmp/script.sh
+
+images - List images
+# docker images
+
+rmi - Remove images
+# docker rmi nginx
+
+Pull - download an image
+# docker run nginx
+# docker pull nginx
+# docker run ubuntu sleep 5
+
+Exec - execute a command
+# docker ps -a
+# docker exec distracted_mcclintock cat /etc/hosts
+
+Run - attach and detach
+# docker run kodekloud/simple-webapp
+# docker run -d kodekloud/simple-webapp
+# docker attach a043d 
+
+Copy file inside Container
+# docker cp script.sh shub_jenkins_1:/tmp/script.sh
+
+Run container
+# docker run centos
+ 
+Log into the centOS image - use hub.docker.com for check images
+# docker run -it centos bash
+ 
+Run in background for 20 Sec as sleep mode
+# docker run -d centos sleep 20
+ 
+Container that exist
+# docker ps -a
+ 
+Stop container
+# docker run -d centos sleep 2000
+ 
+[root@dns ~]# docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+bc8b4b78beb0        centos              "sleep 2000"        10 seconds ago      Up 10 seconds                           cocky_brahmagupta
+ 
+Name of the container: cocky_brahmagupta
+ 
+Force Kill
+# docker stop cocky_brahmagupta
+ 
+Removing the container ID
+# docker rm e32aec51f29b
+ 
+Remove multiple container same time (Add first three letters)
+# docker rm ccd 045 952 54f
+ 
+Check image
+# docker images
+ 
+Rm image 
+# docker rmi centos
+ 
+Pull image (Not to run)
+# docker pull ubuntu
+# docker image
+ 
+Execute command in container without login in
+# docker run -d ubuntu sleep 1000
+# docker exec containerID cat /etc/*release*
+
+run - PORT mapping
+# docker run -p 3306:3306 mysql
+
+https://hub.docker.com/explore
+ 
+Official Images
+https://hub.docker.com/search?image_filter=official&type=image
