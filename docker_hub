@@ -1,0 +1,12 @@
+Search
+# docker search python:3.6
+# docker search --filter "is-official=true" register
+
+Login
+# docker login
+
+Tag image to public repo
+# docker tag nginx:latest malkiats/repo-nginx:test-nginx
+
+Push the image to docker hub
+# docker image push malkiats/repo-nginx:test-nginx
