@@ -1,0 +1,32 @@
+Creating bridge
+# docker network create --driver bridge my-bridge
+
+Create bridge with subnet
+# docker network create --driver bridge --subnet=192.168.0.0/16 --ip-range=192.168.5.0/24 my-bridge-1
+
+List network
+# docker network ls
+NETWORK ID     NAME          DRIVER    SCOPE
+7891c6a9cd6c   bridge        bridge    local
+
+Filter the search 
+# docker network ls --filter driver=bridge
+
+Connect container to network
+# docker network connect my-bridge-1 cont_run-env
+
+Confirm with inspect
+# docker inspect cont_run-env
+
+Adding host network during container run
+# docker container run -itd --network host --name test_nginx nginx
+
+Check Port
+# docker container port test_nginx
+
+Bridge network insepct details
+# docker network inspect bridge
+# docker network inspect my-bridge-1
+
+Disconnect network from container
+# docker network disconnect my-bridge-1 cont_run-env
