@@ -1,0 +1,71 @@
+# nano /etc/apt/sources.list
+deb https://download.virtualbox.org/virtualbox/debian xenial contrib
+
+Add GPG Key
+
+https://github.com/docker/machine/releases/
+
+
+Adding Manager and worker
+# docker-machine create --driver virtualbox manager
+# docker-machine create --driver virtualbox worker-1
+# docker-machine create --driver virtualbox worker-2
+
+List the running docker machine
+# docker-machine ls
+
+IP list
+# docker-machine ip manager
+
+Docker machine Inspect
+# docker-machine inspect manager
+
+SSH login to docker machine
+# docker-machine ssh manager
+
+Initialize the Swarm on Manager machine
+# docker swarm init --advertise-addr 192.168.99.100 
+Swarm initialized: current node (te0wzpgi64ubokpvak1aoyi7m) is now a manager.
+
+Re-generate the token for worker nodes
+# docker swarm join-token worker
+
+Login to Worker
+# docker-machine ssh worker-2
+And execute
+# docker swarm join --token SWMTKN-1-5qfzeqrrd6fiy8vejv53z5x99t8r82fuvkczp2lkssgddu5mvd-34pahnv3oixzcg9fkhigadsg0 192.168.99.100:2377
+This node joined a swarm as a worker.
+
+Docker Inspect (Node ID, Hostnae, Time stamp, Engine, Memory, CPU, Cert)
+# docker node inspect --pretty self
+
+Create 3 Replica Web application container
+# docker service create --name web-server -p 8080:80 --replicas 3 nginx:latest
+
+List Container
+# docker service ps web-server
+
+Inspect Container
+# docker service inspect web-server
+
+Leave the swarm cluster from worker node
+# docker swarm leave                                                           
+Node left the swarm.
+
+Delete the worker from Manager
+# docker node rm worker-2
+
+Scale the replica on manager
+# docker service scale web-server=6
+
+List the container
+# docker service 
+
+Update the container
+# docker service update --image nginx:alpine web-server
+
+Inspect
+# docker node inspect --pretty web-server
+
+Remove web-server
+Docker service rm web-server
