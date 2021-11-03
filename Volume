@@ -1,0 +1,31 @@
+Create Volume
+# docker volume create vol-busybox
+
+Adding volume to container
+# docker run -d --volume vol-busybox:/tmp test_nginx
+# docker run -v keysvolume:/data --user root uuidgen
+
+List Volume
+[root@docker dockertech]# docker volume ls
+DRIVER    VOLUME NAME
+local     vol-busybox
+
+Filter the Volume
+# docker volume ls --filter "dangling=true"
+
+Check details inspect
+# docker volume inspect vol-busybox
+
+Remove the volume
+# docker volume rm vol-busybox
+
+Creating Volume with container
+# docker run -itd --name ubuntu1 --volume vol-ubuntu:/var/log ubuntu:latest
+
+Volume details
+# docker container inspect --format "{{json .Mounts}}" ubuntu1 | python -m json.tool
+
+Volume path on host
+# cd /var/lib/docker/volumes/
+[root@docker volumes]# ls
+backingFsBlockDev  metadata.db  vol-ubuntu
