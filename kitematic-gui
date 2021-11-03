@@ -1,0 +1,22 @@
+Docker GUI Repo
+https://github.com/docker/kitematic/releases
+
+# Unzip Kitematic file
+
+# cd Downloads
+
+# sudo apt install unzip
+
+# sudo unzip Kitematic*.zip
+
+# sudo dpkg -i Kitematic*.deb
+
+If you get dependencies error then run the below command
+
+# sudo apt install -f
+
+# sudo dpkg -i Kitematic*.deb
+
+# Run Kitematic on Ubuntu 20.04
+
+# kitematic
