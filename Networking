@@ -30,3 +30,6 @@ Bridge network insepct details
 
 Disconnect network from container
 # docker network disconnect my-bridge-1 cont_run-env
+
+Remove network from Docker
+# docker network rm b991f9be5f3b
