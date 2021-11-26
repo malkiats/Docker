@@ -18,6 +18,17 @@ Image details
 
 # docker image inspect --format "{{json .Config}}" img-nginx > inspect.txt
 
+# docker commit to create images # Add package # Review
+docker run -i -t ubuntu /bin/bash
+apt-get -yqq update
+apt-get -y install apache2
+exit
+docker commit 4aab3cexyz malkiats/apache2
+docker images malkiats/apache2
+
+# Committing another custom container -m (Commit msg -a (author)
+docker commit -m "A new custom images" -a "malkiats"
+
 [root@docker dockertech]# docker image history ubuntu:16.04
 IMAGE          CREATED       CREATED BY                                      SIZE      COMMENT
 b6f507652425   7 weeks ago   /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B
