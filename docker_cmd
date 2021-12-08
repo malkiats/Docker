@@ -41,6 +41,10 @@ Run - start a container
 Delete all stop Container in one time
 # docker container prune
 
+kill all running containers with docker kill $(docker ps -q)  
+delete all stopped containers with docker rm $(docker ps -a -q)  
+delete all images with docker rmi $(docker images -q)  
+
 ps - list containers
 # docker ps
 # docker ps -a
