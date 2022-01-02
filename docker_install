@@ -1,6 +1,10 @@
 Docker Installation
 
-Install yum-utils
+On amzn linux
+# sudo rm /etc/yum.repos.d/docker-ce.repo
+# sudo amazon-linux-extras install docker
+
+Install yum-utils - centos7
 # yum install -y yum-utils
 
 Add docker repo
