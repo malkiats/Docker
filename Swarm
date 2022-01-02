@@ -69,3 +69,9 @@ Inspect
 
 Remove web-server
 Docker service rm web-server
+
+To add a worker to this swarm, run the following command:
+# docker swarm join --token SWMTKN-1-17gxjpucg5jmu3gtl89nv4z80cjg2v0x4j1oewvfu3sdi9e3ws-1ifadfpe2j84p6r2iuz78ma74 192.168.100.102:2377
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+
