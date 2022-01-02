@@ -77,3 +77,6 @@ To add a manager to this swarm, run 'docker swarm join-token manager' and follow
 
 Lable to node
 # docker node update node1 --lable-add Name=nodejs
+
+Promote Worker to Manager - Execute on Master
+# docker node promote NODE
