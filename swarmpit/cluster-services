@@ -1,0 +1,9 @@
+Cluster for containerized services by creating a network overlay
+# docker network create --driver overlay --subnet 10.0.0.0/12 --opt encrypted services
+
+Start a pair of web hosts
+# docker service create --replicas 2 --name nginx --network services --publish 80:80 nginx
+
+Currently deployed services with the command below.
+# docker service ls
+# docker service ps nginx
