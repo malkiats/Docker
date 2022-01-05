@@ -5,11 +5,16 @@ Search
 Login
 # docker login
 
+Docker commit (Custom image)
+# docker commit -m "New Custom" -a "malkiats" 35c618dda7a7 (Repo)nginx-custom:(Tag)latest
+
 Tag image to public repo
 # docker tag nginx:latest malkiats/repo-nginx:test-nginx
 
 Push the image to docker hub
 # docker image push malkiats/repo-nginx:test-nginx
+
+####################################################
 
 Image details
 # docker images inspect ubuntu:latest
@@ -27,7 +32,7 @@ docker commit 4aab3cexyz malkiats/apache2
 docker images malkiats/apache2
 
 # Committing another custom container -m (Commit msg -a (author)
-docker commit -m "A new custom images" -a "malkiats"
+docker commit -m "A new custom images" -a "malkiats" 
 
 [root@docker dockertech]# docker image history ubuntu:16.04
 IMAGE          CREATED       CREATED BY                                      SIZE      COMMENT
