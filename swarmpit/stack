@@ -1,0 +1,18 @@
+### Setup ###
+docker swarm init                                     # Start a swarm, with this machine as manager
+docker service create --name registry --publish published=5000,target=5000 registry:2            # Create registry
+curl http://localhost:5000/v2/                        # Test Registry
+docker-compose build && docker-compose push           # Build and push service containers
+
+### Deploy ###
+docker stack deploy --compose-file docker-compose.yml STACK_NAME        # Deploy the stack
+docker stack services STACK_NAME                                        # Check status of stack
+
+### Update services ###
+docker-compose build && docker-compose push                             # Rebuild and push service containers
+docker stack deploy --compose-file docker-compose.yml STACK_NAME        # Update any out of date services
+
+### Teardown ###
+docker stack rm STACK_NAME          # Kill all services
+docker service rm registry          # Kill registry
+docker swarm leave --force          # Leave the swam
