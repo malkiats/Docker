@@ -1,4 +1,4 @@
-# Docker Installtion / Configuation / Troubleshooting
+# Docker Installation / Configuation / Troubleshooting
 
 (Docker Shortcuts)  
 $ docker ps --format "table {{.ID}}\t{{.Status}}\t{{.Names}}"   - List containers  
