@@ -12,7 +12,10 @@ Adding Manager and worker
 # docker-machine create --driver virtualbox worker-2
 
 List the running docker machine
-# docker-machine ls
+# docker-machine ls  
+
+List Node
+# docker node ls
 
 IP list
 # docker-machine ip manager
