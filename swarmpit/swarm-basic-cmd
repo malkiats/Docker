@@ -33,6 +33,9 @@ Swarm initialized: current node (te0wzpgi64ubokpvak1aoyi7m) is now a manager.
 Re-generate the token for worker nodes
 # docker swarm join-token worker
 
+Re-generate the token for Manager nodes
+# docker swarm join-token manager
+
 Login to Worker
 # docker-machine ssh worker-2
 And execute
