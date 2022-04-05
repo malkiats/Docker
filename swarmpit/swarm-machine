@@ -1,0 +1,24 @@
+# nano /etc/apt/sources.list
+deb https://download.virtualbox.org/virtualbox/debian xenial contrib
+
+Add GPG Key
+
+https://github.com/docker/machine/releases/
+
+
+Adding Manager and worker
+# docker-machine create --driver virtualbox manager
+# docker-machine create --driver virtualbox worker-1
+# docker-machine create --driver virtualbox worker-2
+
+List the running docker machine
+# docker-machine ls  
+
+IP list
+# docker-machine ip manager
+
+Docker machine Inspect
+# docker-machine inspect manager
+
+SSH login to docker machine
+# docker-machine ssh manager
