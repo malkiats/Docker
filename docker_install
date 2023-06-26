@@ -10,8 +10,15 @@ On amzn linux
 ##############OR##############
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
- ############################
- 
+############################
+
+############################
+CENTOS 8
+dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+dnf list docker-ce
+dnf install docker-ce --nobest -y
+############################
+
 Install yum-utils - centos7
 # yum install -y yum-utils
 
